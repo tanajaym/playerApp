@@ -6,43 +6,52 @@ import { PiUserFill } from "react-icons/pi";
 
 const LoginForm = ({ onRegistrLinkClick }) => {
   
-  const form1 = document.getElementsByClassName('loginForm');
-  // const form = document.querySelector('loginForm');
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const [rememberME, setRememberMe] = useState('false');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
-    const formDataObject = Object.fromEntries(formData.entries());
-    // console.log(formDataObject);
+    // const formDataObject = {
+    //   login,
+    //   password
+    // };
+    
+      let form = document.forms["loginForm"];
+      let object = {};
+      let data = new FormData(form);
+
+      data.forEach(function(value, key){
+        if(form[key].type === 'checkbox'){
+          if(form[key].checked)
+          object[key] = true;
+        else object[key] = false;
+        } else{
+          object[key] = value; 
+        }
+      });
+
+      object['userRemember'] = rememberME;
+      //чтоб значение чекубокса отобрадалось даже, если на него не жмали
+
+      var json = JSON.stringify(object);
+      console.log(json);
+
+      const request = await fetch("http://127.0.0.1:8000/", {
+        // переделай на другой
+        // https://learn.javascript.ru/fetch
+        method: "POST",
+        body: json,
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
   };
 
-
-
-
-
-
-
-
-  //   fetch('https://reqres.in/api/users', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(formDataObject) 
-  //   })
-
-  //       // Здесь можно добавить логику для отправки данных на сервер
-  // };
-
-    
-    
-    
-    
     return (
     <div className="form-box login">
-      <form className="loginForm" action=""
+      <form name="loginForm" className="loginForm" action=""
         onSubmit={handleSubmit} 
       >
         <h1 id="h1">Login</h1>
@@ -53,8 +62,7 @@ const LoginForm = ({ onRegistrLinkClick }) => {
                   placeholder=" login" 
                   required 
                   autoComplete="username"
-            value={login} 
-            onChange={(e) => setLogin(e.target.value)}
+                  value={login} onChange={(e) => setLogin(e.target.value)}
           />
           <PiUserFill className="icon" />
         </div>
@@ -64,15 +72,15 @@ const LoginForm = ({ onRegistrLinkClick }) => {
                   type="password" 
                   placeholder=" password" 
                   autoComplete="current-password" 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+                  value={password} onChange={(e) => setPassword(e.target.value)}
           />
           <FaKey className="icon" />
         </div>
 
         <div className="rememberME">
-          <input name="checkbox" 
+          <input name="userRemember" 
                 type="checkbox" 
+                value={rememberME} onChange={(e) => setRememberMe(e.target.checked)}
 
                 />
           <label htmlFor="remember">Remember me</label><br></br>

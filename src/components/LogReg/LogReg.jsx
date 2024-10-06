@@ -6,17 +6,6 @@ import RegistrationForm from './RegistrationForm';
 
 const LogReg = () => {
 
-  // const{
-  //   login,
-  //   password,
-  //   terms,
-  //   setLogin,
-  //   setPassword,
-  //   setTerms,
-  //   loginFormState,
-  //   extractFromData
-  // } = useLogRegState;
-
   const [action, setAction] = useState('');
 
   const registrLink = () => {
