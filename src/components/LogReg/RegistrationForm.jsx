@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { PiUserFill } from "react-icons/pi";
 import { FaKey } from "react-icons/fa";
@@ -14,12 +15,6 @@ const RegistrationForm = ({ onLoginLinkClick }) => {
   
     const handleSubmit = async (event) => {
       event.preventDefault();
-  
-      // const formDataObject = {
-      //   login,
-      //   password,
-      //   email
-      // };
       
         let form1 = document.forms["registrationForm"];
         let object = {};
@@ -101,7 +96,8 @@ const RegistrationForm = ({ onLoginLinkClick }) => {
 
         <div className="loginLink">
           Have an account?
-          <a href="#" onClick={onLoginLinkClick}>Login</a>
+          <Link to="/" onClick={onLoginLinkClick}>Login</Link>
+          {/* <a href="#" onClick={onLoginLinkClick}>Login</a> */}
         </div>
       </form>
     </div>

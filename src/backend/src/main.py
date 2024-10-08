@@ -32,7 +32,7 @@ class User(BaseModel):
 #login
 @app.post("/")
 def read_root(user: User):
-  return {"login": user.userLogin, "password": user.userPassword "rememberMe": user.userRemember}
+  return {"login": user.userLogin, "password": user.userPassword "rememberME": user.userRemember}
 
 #registre
 

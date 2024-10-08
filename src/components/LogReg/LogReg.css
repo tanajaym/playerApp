@@ -1,3 +1,4 @@
+
 .wrapper{
   background-color: rgba(17, 16, 16, 0.589);
   position: relative;
@@ -150,6 +151,7 @@ form .input {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: 800;
+  padding-left: 0.5rem;
 }
 
 .loginLink p{
@@ -161,6 +163,22 @@ form .input {
   transition: 0.4ms;
 }
 
+.forgot_pass{
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  text-decoration-line: none;
+  font-size: 0.9rem;
+}
+
+.forgot_pass:hover{
+  color: rgba(0, 0, 0, 0.71);
+  transition: 0.4ms;
+  cursor: pointer;
+}
+/* button */
+
 .registrationLink{
   padding-top: 1rem;
   text-align: center;
@@ -170,6 +188,7 @@ form .input {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: 800;
+  padding-left: 0.5rem;
 }
 
 .registrationLink p{

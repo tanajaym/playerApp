@@ -1,10 +1,12 @@
 // LoginForm.jsx
+import { Link } from "react-router-dom";
+
 import React, { useState } from "react";
 import { FaKey } from "react-icons/fa";
 import { PiUserFill } from "react-icons/pi";
 
 
-const LoginForm = ({ onRegistrLinkClick }) => {
+const LoginForm = ({ onRegisterLinkClick }) => {
   
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
@@ -13,11 +15,6 @@ const LoginForm = ({ onRegistrLinkClick }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // const formDataObject = {
-    //   login,
-    //   password
-    // };
-    
       let form = document.forms["loginForm"];
       let object = {};
       let data = new FormData(form);
@@ -85,7 +82,7 @@ const LoginForm = ({ onRegistrLinkClick }) => {
                 />
           <label htmlFor="remember">Remember me</label><br></br>
           {/* <a href="#">Forgot password?</a> */}
-          <button>Forgot password? </button>
+          <button className="forgot_pass">Forgot password? </button>
         </div>
 
         <input name="submitButton" id="submitButton1" type="submit" value={'Login'} />
@@ -94,7 +91,7 @@ const LoginForm = ({ onRegistrLinkClick }) => {
 
         <div className="registrationLink">
           Don't have an account?
-          <a href="#" onClick={onRegistrLinkClick}>Register</a>
+        <Link to="/registration" onClick={onRegisterLinkClick}>Register</Link>
         </div> 
       </form>
     </div>
