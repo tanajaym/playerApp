@@ -7,7 +7,7 @@ import RegistrationForm from './RegistrationForm';
 
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import { Routes, Route, Link, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
 
 const LogReg = () => {
@@ -34,20 +34,14 @@ const LogReg = () => {
   };
 
   return (
-    // <Router>
+
     <div className={`wrapper${action}`}>
       <Routes>
-          <Route path="/" 
-                  element={<LoginForm onRegisterLinkClick={registreLink} />} />
-          <Route path="/registration" 
-                  element={<RegistrationForm onLoginLinkClick={logLink} />} />
+          <Route path="/" element={<LoginForm onRegisterLinkClick={registreLink} />} />
+          <Route path="/registration" element={<RegistrationForm onLoginLinkClick={logLink} />} />
       </Routes>
-
-      {/* <LoginForm onRegistrLinkClick={registrLink} />
-      <RegistrationForm onLoginLinkClick={logLink} /> */}
-     </div>
+    </div>
     
- //   </Router>
   );
 };
 

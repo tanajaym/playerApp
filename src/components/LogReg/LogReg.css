@@ -77,26 +77,26 @@ form .inputBox{
   top: 0.86rem;
 }
 
-form .rememberME{
+form .checkbox{
   display: flex;
   justify-content:space-between;
   font-size: 0.9rem;
   margin: 15px 10px 15px;
 }
-.rememberME label{
+.checkbox label{
   position: absolute;
   left: 65px;
 }
-.rememberME input{
+.checkbox input{
   accent-color: white;
 }
 
-.rememberME a{
+.checkbox a{
   color: white;
   text-decoration-line: none;
 }
 
-.rememberME a:hover{
+.checkbox a:hover{
   color: rgba(0, 0, 0, 0.71);
   transition: 0.4ms;
 }

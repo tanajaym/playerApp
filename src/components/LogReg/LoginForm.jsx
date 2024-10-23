@@ -11,7 +11,7 @@ const LoginForm = ({ onRegisterLinkClick }) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
   const [rememberME, setRememberMe] = useState('false');
-
+//rememberME - значение value
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -49,8 +49,7 @@ const LoginForm = ({ onRegisterLinkClick }) => {
     return (
     <div className="form-box login">
       <form name="loginForm" className="loginForm" action=""
-        onSubmit={handleSubmit} 
-      >
+        onSubmit={handleSubmit}>
         <h1 id="h1">Login</h1>
 
         <div className="inputBox">
@@ -74,20 +73,16 @@ const LoginForm = ({ onRegisterLinkClick }) => {
           <FaKey className="icon" />
         </div>
 
-        <div className="rememberME">
+        <div className="checkbox">
           <input name="userRemember" 
                 type="checkbox" 
                 value={rememberME} onChange={(e) => setRememberMe(e.target.checked)}
-
                 />
-          <label htmlFor="remember">Remember me</label><br></br>
-          {/* <a href="#">Forgot password?</a> */}
+          <label>Remember me</label><br></br>
           <button className="forgot_pass">Forgot password? </button>
         </div>
 
         <input name="submitButton" id="submitButton1" type="submit" value={'Login'} />
-        {/* <p>{login}</p>
-        <p>{password}</p> */}
 
         <div className="registrationLink">
           Don't have an account?

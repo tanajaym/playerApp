@@ -84,12 +84,12 @@ const RegistrationForm = ({ onLoginLinkClick }) => {
           <FaKey className="icon" />
         </div>
 
-        <div className="rememberME">
+        <div className="checkbox">
           <input name="userTerms" 
                   type="checkbox" 
                   id="terms_chbx" 
                   value={terms} onChange={(e) => setTerms(e.target.checked)} />
-          <label htmlFor="termsConditions">I agree to the terms & conditions</label><br></br>
+          <label>I agree to the terms & conditions</label><br></br>
         </div>
 
         <input id="submitButton2" type="submit" value={'Register'} />
@@ -97,7 +97,6 @@ const RegistrationForm = ({ onLoginLinkClick }) => {
         <div className="loginLink">
           Have an account?
           <Link to="/" onClick={onLoginLinkClick}>Login</Link>
-          {/* <a href="#" onClick={onLoginLinkClick}>Login</a> */}
         </div>
       </form>
     </div>
